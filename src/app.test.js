@@ -7,8 +7,8 @@ test('app renders', () => {
     render(<App/>)
 });
 
-jest.mock('./api/fetchShow');
-console.log(mockFetchShow);
+// jest.mock('./api/fetchShow');
+// console.log(mockFetchShow);
 
 
 // test('Fetches data when interacting with the Dropdown', async () => {
