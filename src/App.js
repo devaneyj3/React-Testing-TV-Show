@@ -16,7 +16,6 @@ export default function App() {
   useEffect(() => {
     FetchShow()
         .then(res => {
-          console.log(`app.js`, res)
           setShow(res.data);
           setSeasons(formatSeasons(res.data._embedded.episodes));
         });
@@ -34,15 +33,16 @@ export default function App() {
   return (
     <div className="App">
       <img className="poster-img" src={show.image.original} alt={show.name} />
+      
       <h1>{show.name}</h1>
       {parse(show.summary)}
-      <Dropdown
+      <Dropdown data-testid="dropdown"
         options={Object.keys(seasons)}
         onChange={handleSelect}
         value={selectedSeason || "Select a season"}
         placeholder="Select an option"
       />
-      <Episodes episodes={episodes} />
+      {/* <Episodes episodes={episodes} /> */}
     </div>
   );
 }
