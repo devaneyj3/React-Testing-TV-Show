@@ -9,6 +9,7 @@ export default function Episodes(props) {
           {e.image && (
             <img className="episode-image" src={e.image.medium} alt={e.name} />
           )}
+          {/* the image doesnt fail the test when I delete it */}
           <div className="episode-info">
             <p className="episode-number">
               Season {e.season}, Episode {e.number}
